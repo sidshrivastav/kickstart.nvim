@@ -189,23 +189,6 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- Enable all features of vim-go
-vim.g.go_def_mode = 'gopls'
-vim.g.go_info_mode = 'gopls'
-
--- Auto format on save
-vim.g.go_fmt_autosave = 1
-vim.g.go_imports_autosave = 1
-
--- Use Go modules
-vim.g.go_mod_fmt_autosave = 1
-
--- Enable testing functionality
-vim.g.go_test_timeout = '30s'
-
--- Set auto-completion
-vim.g.go_auto_type_info = 1
-
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -872,13 +855,13 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'NLKNguyen/papercolor-theme',
+    'folke/tokyonight.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'PaperColor'
+      vim.cmd.colorscheme 'tokyonight-night'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
@@ -1000,4 +983,3 @@ require('lazy').setup({
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
